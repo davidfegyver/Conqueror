@@ -1,8 +1,8 @@
 
 const serverUrl = "https://overpass-api.de/api/interpreter?data=";
 
-function getCounties(countryCode) {
-  const query = `[out:json];area["ISO3166-1"="${countryCode.toUpperCase()}"][admin_level=2];rel(area)["admin_level"="6"][boundary=administrative];out geom;`;
+function getCounties(countryCode,admin_level) {
+  const query = `[out:json];area["ISO3166-1"="${countryCode.toUpperCase()}"][admin_level=2];rel(area)["admin_level"="${admin_level}"][boundary=administrative];out geom;`;
   return fetch(serverUrl + query).then((response) => response.json());
 }
 

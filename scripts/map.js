@@ -16,12 +16,16 @@ async function prepareGeoJson() {
   if (game.type == "country-cities") {
     game.geojson = osmtogeojson(await getCitiesOfCountry(game.country));
   }
-  if (game.type == "country-counties") {
-    game.geojson = osmtogeojson(await getCounties(game.country));
+  if (game.type == "country-counties-4") {
+    game.geojson = osmtogeojson(await getCounties(game.country,4));
+  }
+  if (game.type == "country-counties-6") {
+    game.geojson = osmtogeojson(await getCounties(game.country,6));
   }
   if (game.type == "county-cities") {
     game.geojson = osmtogeojson(await getCitiesOfCounty(game.county));
   }
+  
 
   game.geojson.features = game.geojson.features.filter(
     (a) => a.geometry.type == "Polygon" || a.geometry.type == "MultiPolygon"
