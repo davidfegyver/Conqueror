@@ -1,5 +1,5 @@
 
-const serverUrl = "http://overpass-api.de/api/interpreter?data=";
+const serverUrl = "https://overpass-api.de/api/interpreter?data=";
 
 function getCounties(countryCode) {
   const query = `[out:json];area["ISO3166-1"="${countryCode.toUpperCase()}"][admin_level=2];rel(area)["admin_level"="6"][boundary=administrative];out geom;`;
