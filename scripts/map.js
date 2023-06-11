@@ -22,7 +22,7 @@ async function prepareGeoJson() {
   if (game.type == "country-counties-6") {
     game.geojson = osmtogeojson(await getCounties(game.country,6));
   }
-  if (game.type == "county-cities") {
+  if (game.type.startsWith("county")) {
     game.geojson = osmtogeojson(await getCitiesOfCounty(game.county));
   }
 
