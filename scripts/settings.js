@@ -24,7 +24,7 @@ countrySelect.onchange = function () {
     launchGameButton.hidden = false;
   } else {
     county.hidden = false;
-    setupCountySelect(game.country,game.type.split("-")[2]);
+    setupCountySelect(game.country,game.type.split("-")[1]);
   }
 };
 
