@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Honfoglaló - The Game.</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Web page CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Leaflet CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <div id="header">
+      <h1>Honfoglaló - The Game.</h1>
+    </div>
+
+    <!-- Welcome -->
+    <div id="welcome">
+      <h1>Welcome</h1>
+      <p>Introasdasdasdsadsadas</p>
+
+      <button id="welcomeStart">Start a new game!</button>
+      <button id="welcomeInvite">Have an invite code?</button>
+    </div>
+
+    <!-- Join using invite code -->
+    <div id="invite" hidden>
+      <h1>Invite code</h1>
+      <p>Enter the invite code you got from your friend!</p>
+      <input type="text" id="inviteCode" />
+      <button id="inviteJoin">Join</button>
+    </div>
+
+    <!-- Game Launcher -->
+    <div id="options" hidden>
+      <h1>Before you start, set things up.</h1>
+
+      <div id="gameType">
+        <p>Select a game type</p>
+
+        <select id="gameTypeSelect">
+          <option disabled selected value></option>
+          <option value="country-cities">Country-Cities</option>
+          <option value="country-county">Country - Counties</option>
+          <option value="county-cities">County - Cities</option>
+        </select>
+      </div>
+
+      <div id="country" hidden>
+        <p>Choose a country</p>
+        <select id="countrySelect">
+            <option disabled selected value></option>
+        </select>
+      </div>
+
+      <div id="county" hidden>
+        <p>Choose a county</p>
+        <select id="countySelect">
+            <option disabled selected value></option>
+        </select>
+      </div>
+
+      <button id="launchGameButton" hidden onclick="launchGame();">Launch the game!</button>
+    </div>
+
+    <!-- Main game  -->
+    <div id="main" hidden>
+      <div id="map"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Game JS -->
+    <script src="scripts/osmtogeojson.js"></script>
+    <script src="scripts/overpassApi.js"></script>
+    <script src="scripts/area.js"></script>
+    <script src="scripts/countries.js"></script>
+    <script src="scripts/settings.js"></script>
+    <script src="scripts/map.js"></script>
+    <script src="scripts/gameControls.js"></script>
+
+    <script src="scripts/index.js"></script>
+  </body>
+</html>
