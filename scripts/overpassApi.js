@@ -16,7 +16,7 @@ function getCitiesOfCountry(countryId) {
     return fetch(serverUrl + query).then((response) => response.json());
 }
 
-function getCitiesOfCounty(countyName) {
-    const query = `[out:json];area["name"="${countyName}"][admin_level=6];rel(area)["admin_level"="8"][boundary=administrative];out geom;`;
+function getCitiesOfCounty(countyName,admin_level) {
+    const query = `[out:json];area["name"="${countyName}"][admin_level="${admin_level}"];rel(area)["admin_level"="8"][boundary=administrative];out geom;`;
     return fetch(serverUrl + query).then((response) => response.json());
 }

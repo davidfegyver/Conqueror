@@ -22,8 +22,11 @@ async function prepareGeoJson() {
   if (game.type == "country-counties-6") {
     game.geojson = osmtogeojson(await getCounties(game.country,6));
   }
-  if (game.type.startsWith("county")) {
-    game.geojson = osmtogeojson(await getCitiesOfCounty(game.county));
+  if (game.type == "county-4-cities") {
+    game.geojson = osmtogeojson(await getCitiesOfCounty(game.county,4));
+  }
+  if (game.type == "county-6-cities") {
+    game.geojson = osmtogeojson(await getCitiesOfCounty(game.county,6));
   }
 
   game.geojson.features = game.geojson.features.filter(
