@@ -24,7 +24,7 @@ countrySelect.onchange = function () {
     launchGameButton.hidden = false;
   } else {
     county.hidden = false;
-    setupCountySelect(game.country);
+    setupCountySelect(game.country,game.type.split("-")[2]);
   }
 };
 
@@ -42,8 +42,8 @@ function setupCountrySelect() {
     countrySelect.appendChild(country);
   }
 }
-async function setupCountySelect(countryCode) {
-  const counties = await getCounties(countryCode);
+async function setupCountySelect(countryCode, admin_level) {
+  const counties = await getCounties(countryCode,admin_level);
   for (let i of counties.elements) {
     const county = document.createElement("option");
     county.value = i.tags.name;

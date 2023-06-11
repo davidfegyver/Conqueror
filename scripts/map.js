@@ -25,7 +25,6 @@ async function prepareGeoJson() {
   if (game.type == "county-cities") {
     game.geojson = osmtogeojson(await getCitiesOfCounty(game.county));
   }
-  
 
   game.geojson.features = game.geojson.features.filter(
     (a) => a.geometry.type == "Polygon" || a.geometry.type == "MultiPolygon"
